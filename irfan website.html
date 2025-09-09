@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Irfan — Portfolio Intro</title>
+  <meta name="description" content="The clean, minimal intro section for Irfan's personal website." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0f1a;
+      --card: #0f1524;
+      --text: #e9ecf1;
+      --muted:#9aa4b2;
+      --accent:#6ee7ff;
+      --accent-2:#9b8cff;
+      --ring: rgba(110, 231, 255, .45);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0; font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+      color:var(--text); background: radial-gradient(1200px 800px at 80% -10%, rgba(110,231,255,.08), transparent 60%),
+                radial-gradient(900px 700px at -10% 10%, rgba(155,140,255,.10), transparent 60%),
+                var(--bg);
+      overflow-x:hidden;
+    }
+    .container{max-width:1100px;margin:0 auto;padding:24px;}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+    .logo{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center; box-shadow:0 10px 30px rgba(110,231,255,.25);}
+    .logo span{font-weight:800;color:#0a0a0a}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:500}
+    nav a:hover{color:var(--text)}
+
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;padding:48px 0;}
+    @media (max-width:900px){.hero{grid-template-columns:1fr;}}
+
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:12px;}
+    .eyebrow .dot{width:8px;height:8px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent-2)); box-shadow:0 0 0 6px var(--ring);}   
+
+    h1{font-size:clamp(28px,6vw,56px);line-height:1.05;margin:14px 0 12px;font-weight:800;}
+    .gradient-text{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+    .lead{color:#c9d2df; font-size:clamp(14px,2.2vw,18px); line-height:1.6;}
+
+    .cta{display:flex;gap:14px;margin-top:22px;flex-wrap:wrap}
+    .btn{appearance:none;border:none;cursor:pointer;border-radius:14px;padding:12px 18px;font-weight:700;letter-spacing:.2px}
+    .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#0a0a0a; box-shadow:0 10px 30px rgba(110,231,255,.25);}
+    .btn-ghost{background:rgba(255,255,255,.06);color:var(--text);border:1px solid rgba(255,255,255,.08)}
+    .btn:hover{transform:translateY(-1px)}
+
+    .card{
+      position:relative; border-radius:20px; background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.08); padding:22px; backdrop-filter: blur(8px);
+    }
+    .avatar{
+      --size: 160px; width:var(--size);height:var(--size);border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.12);
+      background:linear-gradient(135deg,rgba(110,231,255,.25),rgba(155,140,255,.25));
+      display:grid;place-items:center; margin-inline:auto;
+    }
+    .avatar svg{width:50%;height:50%;opacity:.7}
+
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .chip{font-size:12px;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:#cfd7e3}
+
+    .social{display:flex;gap:10px;margin-top:18px}
+    .icon-btn{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+    .icon-btn:hover{transform:translateY(-1px)}
+
+    footer{color:var(--muted);text-align:center;padding:28px 0 12px;font-size:13px}
+
+    /* small animated typing effect */
+    .typing{border-right:.12em solid var(--accent);white-space:nowrap;overflow:hidden}
+    @keyframes caret{50%{border-color:transparent}}
+    .typing{animation: caret 1s steps(1) infinite}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="#">
+        <div class="logo"><span>I</span></div>
+        <strong>Irfan</strong>
+      </a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <span class="eyebrow"><span class="dot"></span> Welcome to my space</span>
+        <h1>Hi, I'm <span class="gradient-text">Irfan</span><br><span id="typing" class="typing">Developer • Creator • Learner</span></h1>
+        <p class="lead">I build clean, purposeful web experiences and love turning ideas into useful products. This is the minimal intro to my world—fast, focused, and a little bit futuristic.</p>
+        <div class="cta">
+          <a href="#work" class="btn btn-primary">See My Work</a>
+          <a href="#contact" class="btn btn-ghost">Contact Me</a>
+        </div>
+        <div class="chips" aria-label="Skills">
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">Python</span>
+          <span class="chip">Cloud</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="avatar" aria-label="Irfan Avatar">
+          <!-- Placeholder avatar icon -->
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M3 21a9 9 0 0 1 18 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div style="margin-top:16px;text-align:center">
+          <p style="margin:8px 0;color:#cfd7e3">Based in India · Open to collabs</p>
+          <div class="social">
+            <a class="icon-btn" href="#" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A12 12 0 0 0 0 12.7a12 12 0 0 0 8.2 11.4c.6.1.8-.3.8-.6v-2.1c-3.3.8-4-1.6-4-1.6-.6-1.6-1.5-2-1.5-2-1.2-.8.1-.8.1-.8 1.3.1 2 .  1.4 2 .  1.4 1.2 2.2 3 1.6 3.7 1.2.1-.9.5-1.6.9-1.9-2.6-.3-5.3-1.4-5.3-6.2 0-1.4.5-2.5 1.3-3.4-.1-.3-.6-1.7.1-3.6 0 0 1-.3 3.4 1.3a11.3 11.3 0 0 1 6.2 0c2.4-1.6 3.4-1.3 3.4-1.3.7 1.9.2 3.3.1 3.6.8.9 1.3 2 1.3 3.4 0 4.8-2.7 5.9-5.3 6.2.5.4 1 .  1.3 1 .  2.6v3.8c0 .3.2.7.8.6A12 12 0 0 0 24 12.7 12 12 0 0 0 12 .5Z"/></svg>
+            </a>
+            <a class="icon-btn" href="#" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5Zm.02 6.5H2v11h3V10Zm4 0H6v11h3v-5.6c0-1.49 1.2-2.4 2.3-2.4 1.1 0 1.7.74 1.7 2.4V21h3v-6.22c0-3.36-1.8-4.93-4.2-4.93-1.93 0-2.7 1.06-3.2 1.8V10Z"/></svg>
+            </a>
+            <a class="icon-btn" href="#" aria-label="Email">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v.4l-10 6.2-10-6.2V6Zm0 2.7v8.3a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8.7l-9.3 5.7a2 2 0 0 1-2.1 0L2 8.7Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="card" style="margin-top:20px">
+      <h2 style="margin:0 0 8px">About Me</h2>
+      <p style="margin:0;color:#c9d2df">I'm Irfan — a curious builder who enjoys crafting delightful user experiences and solving real problems with code. I love learning fast, collaborating with great teams, and shipping things that people actually use.</p>
+    </section>
+
+    <section id="work" class="card" style="margin-top:20px">
+      <h2 style="margin:0 0 8px">Featured Work</h2>
+      <ul style="margin:0;padding-left:18px;color:#c9d2df">
+        <li>Project A — Simple landing page that converts.</li>
+        <li>Project B — Small web app with authentication.</li>
+        <li>Project C — Fun experiment with animations.</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="card" style="margin-top:20px">
+      <h2 style="margin:0 0 8px">Contact</h2>
+      <p style="margin:0;color:#c9d2df">Want to collaborate or just say hi? Drop a message at <a style="color:var(--text)" href="mailto:hello@yourmail.com">hello@yourmail.com</a>.</p>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Irfan. Built with ❤️ and lots of coffee.
+    </footer>
+  </div>
+
+  <script>
+    // dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // simple typing rotator for the subtitle
+    const roles = [
+      'Developer • Creator • Learner',
+      'Web Enthusiast',
+      'Python & JS Explorer',
+      'Cloud Curious'
+    ];
+    let i = 0, j = 0, current = roles[0], isDeleting = false;
+    const el = document.getElementById('typing');
+
+    function tick(){
+      const full = roles[i % roles.length];
+      if(!isDeleting){
+        current = full.slice(0, ++j);
+        if(j === full.length){ isDeleting = true; setTimeout(tick, 900); return; }
+      } else {
+        current = full.slice(0, --j);
+        if(j === 0){ isDeleting = false; i++; }
+      }
+      el.textContent = current || '\u200b';
+      setTimeout(tick, isDeleting ? 40 : 65);
+    }
+    setTimeout(tick, 900);
+  </script>
+</body>
+</html>
